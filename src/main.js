@@ -1,4 +1,6 @@
 // IMPORTS ------------------------------------------------------------------------------------------
+import { showLoading } from './ui.js';
+import { showResult } from './ui.js';
 import { validateUrl } from './utils.js';
 
 // DOM VARIABLES -----------------------------------------------------------------------------
@@ -25,15 +27,18 @@ const copyBtn = document.getElementById('copy-btn');
 // Functions ----------------------------------------------------------------------------------------
  // gets url from input and validates it
 
- function handleSubmit(e) {
+ async function handleSubmit(e) {
     e.preventDefault(); // Prevent form from normal defaults
     let url = urlInput.value.trim(); // .trim() to remove any whitespace
 
+
+
     // imported validation function from utils.js
     try {
+        showLoading(submitBtn, urlInput); // Show loading state while validating
         validateUrl(url);
     } catch (error) {
-        displayError(error.message);
+        console.error(error.message);
         return;
     }
 
