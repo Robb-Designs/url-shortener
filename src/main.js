@@ -35,8 +35,9 @@ const copyBtn = document.getElementById('copy-btn');
 
     // imported validation function from utils.js
     try {
+        validateUrl(url); // Validate the URL format
         showLoading(submitBtn, urlInput); // Show loading state while validating
-        validateUrl(url);
+    
     } catch (error) {
         console.error(error.message);
         return;
