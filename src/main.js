@@ -1,4 +1,5 @@
-
+// IMPORTS ------------------------------------------------------------------------------------------
+import { validateUrl } from './utils.js';
 
 // DOM VARIABLES -----------------------------------------------------------------------------
 // Form elements
@@ -26,15 +27,17 @@ const copyBtn = document.getElementById('copy-btn');
 
  function handleSubmit(e) {
     e.preventDefault(); // Prevent form from normal defaults
-    const url = urlInput.value.trim(); // .trim() to remove any whitespace
+    let url = urlInput.value.trim(); // .trim() to remove any whitespace
 
-    // Basic validation: check if the input is not empty and is a valid URL
-    if (!url) {
-        displayError('Please enter a URL.');
+    // imported validation function from utils.js
+    try {
+        validateUrl(url);
+    } catch (error) {
+        displayError(error.message);
         return;
     }
 
-    //console.log('Submitted URL:', url);
+    console.log('Submitted URL:', url);
  }
 
 
