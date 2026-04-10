@@ -27,3 +27,16 @@ export function validateUrl(url) {
 }
 
 
+// function that will make a copy of the link to clipboard
+export async function copyTextToClipboard(shortUrl) {
+    try {
+        await navigator.clipboard.writeText(shortUrl);
+        //console.log('Text copied to clipboard');
+        return true; // copy was successful
+    } catch (error) {
+        //console.error('Failed to copy: ', error);
+        return false; // copy failed
+    }
+}
+
+
