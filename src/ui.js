@@ -29,6 +29,11 @@ export function showResult(shortLink, shortUrl, result) { // passed in the short
 export function displayError(message, errorMessageElement) {
     errorMessageElement.textContent = message;
     errorMessageElement.hidden = false;
+    
+    // setTimeoput to hide the error message after 5 secs
+     setTimeout(() => {
+        errorMessageElement.hidden = true;
+    }, 5000);
 }
 
 //clear error message
