@@ -37,6 +37,26 @@ export async function copyTextToClipboard(shortUrl) {
         //console.error('Failed to copy: ', error);
         return false; // copy failed
     }
+
 }
+
+
+// function that gets links, adds them to an array, and saves the array to local storage
+ export function saveLink(link) {
+    // Get existing links or initialize an empty array
+    const links = JSON.parse(localStorage.getItem('shortLinks')) || []; 
+
+    links.push(link);
+
+    // Save the updated links array back to local storage
+    // JSON.stringify to convert the array into a string so it can be stored in local storage
+    localStorage.setItem('shortLinks', JSON.stringify(links));
+ }
+
+ // function that loads the saved links from local storage and returns them as an array
+ export function loadLinks() {
+    const links = JSON.parse(localStorage.getItem('shortLinks')) || [];
+    return links;
+ }
 
 
