@@ -3,11 +3,18 @@
 
 // loading state
 export function showLoading(submitBtn, urlInput) {
-    submitBtn.textContent = 'Shortening...';
+    submitBtn.textContent = "Shortening...";
     submitBtn.disabled = true;
     urlInput.disabled = true;
 
     console.log("loading active...")
+}
+
+// hide loading state
+export function hideLoading(submitBtn, urlInput) {
+    submitBtn.textContent = "Get Your Shorty";
+    submitBtn.disabled = false;
+    urlInput.disabled = false;
 }
 
 //show result
