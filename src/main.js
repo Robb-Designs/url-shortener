@@ -2,7 +2,7 @@
 import { showLoading } from './ui.js';
 import { hideLoading } from './ui.js';
 import { showResult } from './ui.js';
-import { validateUrl } from './utils.js';
+import { copyTextToClipboard, validateUrl } from './utils.js';
 import { fetchShortUrl } from './api.js';
 
 // DOM VARIABLES -----------------------------------------------------------------------------
@@ -41,6 +41,7 @@ async function handleSubmit(e) {
         //this line simulates loading using setTimeout.
         await new Promise(resolve => setTimeout(resolve, 2000));
         const shortLink = await fetchShortUrl(url); // Fetch the shortened URL from the API
+        showResult(shortLink, shortUrl, result); // Show the result on the UI. Passe in
         console.log(shortLink);
 
     } catch (error) {
@@ -57,3 +58,14 @@ async function handleSubmit(e) {
 
 // Event Listeners ----------------------------------------------------------------------------------
 shortenForm.addEventListener('submit', handleSubmit);
+copyBtn.addEventListener('click', async () => {
+    const success = await copyTextToClipboard(shortUrl.href); // Pass the short URL to the copy function
+    if (success) {
+        copyBtn.textContent = "Copied!";
+
+        //setTimeout for resetting the button text back to copy
+        setTimeout(() => {
+            copyBtn.textContent = "Copy";
+        }, 1600); 
+    }
+});

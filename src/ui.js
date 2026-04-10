@@ -2,7 +2,7 @@
 
 
 // loading state
-export function showLoading(submitBtn, urlInput) {
+export function showLoading(submitBtn, urlInput) { // passed in the submit button and url input as params
     submitBtn.textContent = "Shortening...";
     submitBtn.disabled = true;
     urlInput.disabled = true;
@@ -18,7 +18,7 @@ export function hideLoading(submitBtn, urlInput) {
 }
 
 //show result
-export function showResult(shortLink) {
+export function showResult(shortLink, shortUrl, result) { // passed in the shortUrl and result elements as params
     shortUrl.textContent = shortLink;
     shortUrl.href = shortLink;
 
