@@ -13,9 +13,17 @@ export function validateUrl(url) {
     }
 
     try {
-        new URL(url); // This will throw if the URL is invalid
-        return url; 
+        const parsedUrl = new URL(url);
+
+        // checking if the user's input has valid domain structure
+        if (!parsedUrl.hostname.includes('.')) {
+            throw new Error('Please enter a valid domain (e.g., google.com)');
+        }
+
+        return url; // Return the validated URL
     } catch {
         throw new Error('Invalid URL format. (include http:// or https://)');
     }
 }
+
+
