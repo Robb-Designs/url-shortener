@@ -41,3 +41,15 @@ export function clearError(errorMessageElement) {
     errorMessageElement.textContent = '';
     errorMessageElement.hidden = true;
 }
+
+// rendering user's links from local storage
+export function renderSavedLinks(links, container) {
+    container.innerHTML = ''; // Clear existing content
+    links.forEach(link => {
+        const linkElement = document.createElement('a');
+        linkElement.href = link;
+        linkElement.textContent = link;
+        linkElement.target = "_blank";
+        container.appendChild(linkElement);
+    });
+}
