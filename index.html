@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shorty | Your url shortener</title>
     <link rel="stylesheet" href="./style/styles.css">
-    <script defer type="module" src="./src/main.js"></script>
+    <script type="module" src="./src/main.js" defer></script>
 </head>
 
 <body>
@@ -23,7 +23,6 @@
 
             <div id="nav-links">
                 <ul>
-                    <li><a href="#about">About</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
                     <li><a href="#help">Help</a></li>
@@ -46,18 +45,24 @@
                 <div id="cta-form-container">
                     <form id="shorten-form">
                         <label for="url-input">Your Long URL:</label>
-                        <input type="text" name="url" id="url-input" placeholder="www.example.com/long-link..." required>
+                        <input type="text" name="url" id="url-input" placeholder="www.example.com/long-link..."
+                            required>
                         <button type="submit" id="submit-btn">Get Your Shorty</button>
                     </form>
 
-       <!-- RESULT -->
+                    <!-- RESULT -->
                     <div id="result" hidden>
+                        <p id="result-label">Your Shorty is ready:</p>
                         <a href="#" id="short-url" target="_blank"></a>
                         <button id="copy-btn">Copy</button>
                     </div>
 
                     <!-- Error message placeholder -->
                     <p id="error-message" hidden></p>
+                </div>
+                
+                <div class="saved-links-container">
+                    <div id="links-list"></div>
                 </div>
             </div>
         </section>
