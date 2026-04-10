@@ -36,7 +36,7 @@ async function handleSubmit(e) {
 
     // imported validation function from utils.js
     try {
-        url = validateUrl(url); // Validate the URL format and declaring url as the validated URL returned from the function.
+        url = validateUrl(url, errorMessage); // Validate the URL format and declaring url as the validated URL returned from the function.
         showLoading(submitBtn, urlInput); // Show loading state while validating
         //this line simulates loading using setTimeout.
         await new Promise(resolve => setTimeout(resolve, 2000));
@@ -58,6 +58,7 @@ async function handleSubmit(e) {
 
 // Event Listeners ----------------------------------------------------------------------------------
 shortenForm.addEventListener('submit', handleSubmit);
+
 copyBtn.addEventListener('click', async () => {
     const success = await copyTextToClipboard(shortUrl.href); // Pass the short URL to the copy function
     if (success) {

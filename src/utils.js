@@ -1,10 +1,12 @@
 // utility helper functions ------------------------------------------------------------------------
 
 
-export function validateUrl(url) {
+export function validateUrl(url, errorMessage) {
     // checking if input is empty or not a url
     if (!url) {
-        throw new Error('Please enter a URL.');
+        errorMessage.hidden = false;
+        errorMessage.textContent = 'Please enter a URL.';
+       // throw new Error('Please enter a URL.');
     }
 
     // adding http:// if the user didntt include it
@@ -17,12 +19,16 @@ export function validateUrl(url) {
 
         // checking if the user's input has valid domain structure
         if (!parsedUrl.hostname.includes('.')) {
-            throw new Error('Please enter a valid domain (e.g., google.com)');
+            errorMessage.hidden = false;
+            errorMessage.textContent = 'Please enter a valid domain (e.g., google.com)';
+            //throw new Error('Please enter a valid domain (e.g., google.com)');
         }
 
         return url; // Return the validated URL
     } catch {
-        throw new Error('Invalid URL format. (include http:// or https://)');
+        errorMessage.hidden = false;
+        errorMessage.textContent = 'Invalid URL format. (include http:// or https://)';
+        //throw new Error('Invalid URL format. (include http:// or https://)');
     }
 }
 
