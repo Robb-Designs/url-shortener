@@ -4,6 +4,7 @@ import { hideLoading } from './ui.js';
 import { showResult } from './ui.js';
 import { copyTextToClipboard, validateUrl } from './utils.js';
 import { fetchShortUrl } from './api.js';
+import { displayError, clearError } from './ui.js';
 
 // DOM VARIABLES -----------------------------------------------------------------------------
 // Form elements
@@ -22,7 +23,7 @@ const shortUrl = document.getElementById('short-url');
 const copyBtn = document.getElementById('copy-btn');
 
 
-//console.log(urlInput, submitBtn, errorMessage, loading, result, shortUrl, copyBtn);
+
 
 
 // Functions ----------------------------------------------------------------------------------------
@@ -32,12 +33,13 @@ async function handleSubmit(e) {
     e.preventDefault(); // Prevent form from normal defaults
     let url = urlInput.value.trim(); // .trim() to remove any whitespace
 
-
+    clearError(errorMessage); // Clear any previous error messages
 
     // imported validation function from utils.js
     try {
-        url = validateUrl(url, errorMessage); // Validate the URL format and declaring url as the validated URL returned from the function.
+        url = validateUrl(url); // Validate the URL format and declaring url as the validated URL returned from the function.
         showLoading(submitBtn, urlInput); // Show loading state while validating
+        
         //this line simulates loading using setTimeout.
         await new Promise(resolve => setTimeout(resolve, 2000));
         const shortLink = await fetchShortUrl(url); // Fetch the shortened URL from the API
@@ -45,7 +47,7 @@ async function handleSubmit(e) {
         console.log(shortLink);
 
     } catch (error) {
-        console.error(error.message);
+        displayError(error.message, errorMessage); // Display the error message in browser
         return;
     } finally {
         hideLoading(submitBtn, urlInput); // Hide loading state after validation and API call

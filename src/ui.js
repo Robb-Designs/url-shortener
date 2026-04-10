@@ -24,3 +24,15 @@ export function showResult(shortLink, shortUrl, result) { // passed in the short
 
     result.hidden = false;
 }
+
+//display error message
+export function displayError(message, errorMessageElement) {
+    errorMessageElement.textContent = message;
+    errorMessageElement.hidden = false;
+}
+
+//clear error message
+export function clearError(errorMessageElement) {
+    errorMessageElement.textContent = '';
+    errorMessageElement.hidden = true;
+}
