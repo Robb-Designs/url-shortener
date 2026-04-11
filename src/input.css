@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* Run the CLI tool to scan your source files for classes and build your CSS
+npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch */
