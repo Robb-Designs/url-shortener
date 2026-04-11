@@ -13,25 +13,44 @@
 
 <body>
     <!-- NAVBAR -->
-    <header role="banner">
-        <nav role="navigation">
+    <header role="banner" class="w-full bg-base-100 shadow-sm">
+        <nav role="navigation" class="navbar max-w-6xl mx-auto px-4">
             <!-- LOGO -->
-            <div id="nav-logo">
-                <a href="#">
-                    <span>logoPlaceHolder</span>
+            <div id="nav-logo" class="flex-1">
+                <a href="#" class="flex items-center gap-2 text-xl font-bold">
+                    <span class="text-2xl">🔗</span>
                     <h1>Shorty</h1>
                 </a>
             </div>
 
-            <div id="nav-links">
-                <ul>
+            <div id="nav-links" class="hidden md:flex items-center justify-between gap-6">
+                <ul class="flex gap-6">
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
                     <li><a href="#help">Help</a></li>
                 </ul>
 
                 <div id="get-started">
-                    <a href="#hero" id="get-started">Get Started</a>
+                    <a href="#hero" id="get-started" class="btn btn-primary mt-2 text-white">Get Started</a>
+                </div>
+            </div>
+             
+            <!-- Mobile Nav -->
+            <div class="flex-none md:hidden">
+                <div class="dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-ghost btn-circle">
+                        ☰
+                    </label>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#help">Help</a></li>
+                        <li>
+                            <a href="#hero" class="btn btn-primary mt-2 text-white">
+                                Get Started
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
