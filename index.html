@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shorty | Your url shortener</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
     <link href="./dist/output.css" rel="stylesheet">
@@ -35,7 +37,7 @@
                     <a href="#hero" id="get-started" class="btn btn-primary mt-2 text-white">Get Started</a>
                 </div>
             </div>
-             
+
             <!-- Mobile Nav -->
             <div class="flex-none md:hidden">
                 <div class="dropdown dropdown-end">
@@ -59,33 +61,36 @@
 
     <main>
         <!-- HERO -->
-        <section id="hero">
-            <div class="hero-content">
-                <h1>Shorter Links, Instant Magic</h1>
-                <p>Transform long URLs into short, shareable links with ease. Perfect for social media, marketing, and
+        <section id="hero" class="min-h-[80vh] flex items-center justify-center px-4 py-12">
+            <div class="w-full max-w-2xl text-center space-y-6">
+                <h1 class="text-3xl md:text-5xl font-bold leading-tight">Shorter Links, Instant Magic</h1>
+                <p class="text-base md:text-lg text-gray-500">Transform long URLs into short, shareable links with ease.
+                    Perfect for social media, marketing, and
                     more.</p>
-                <div id="cta-form-container">
-                    <form id="shorten-form">
+                <div id="cta-form-container" class="bg-base-100 shadow-md rounded-2xl p-6 space-y-4">
+                    <form id="shorten-form" class="flex flex-col gap-4">
                         <label for="url-input">Your Long URL:</label>
                         <input type="text" name="url" id="url-input" placeholder="www.example.com/long-link..."
-                            required>
-                        <button type="submit" id="submit-btn">Get Your Shorty</button>
+                            class="input input-bordered w-full" required>
+                        <button type="submit" id="submit-btn" class="btn btn-primary w-full">Get Your Shorty</button>
 
                     </form>
 
+                     <!-- Error message placeholder -->
+                    <p id="error-message" class="text-error text-sm" hidden></p>
+
                     <!-- RESULT -->
-                    <div id="result" hidden>
-                        <p id="result-label">Your Shorty is ready:</p>
-                        <a href="#" id="short-url" target="_blank"></a>
-                        <button id="copy-btn">Copy</button>
+                    <div id="result" class="bg-base-200 rounded-xl p-4 flex flex-col gap-3 items-center" hidden>
+                        <p id="result-label" class="text-sm text-gray-500">Your Shorty is ready:</p>
+                        <a href="#" id="short-url" target="_blank" class="text-primary font-medium break-all"></a>
+                        <button id="copy-btn" class="btn btn-sm btn-outline">Copy</button>
                     </div>
 
-                    <!-- Error message placeholder -->
-                    <p id="error-message" hidden></p>
                 </div>
 
                 <div class="saved-links-container">
-                    <div id="links-list"></div>
+                    <h2 class="text-lg font-semibold">Your Links</h2>
+                    <div id="links-list" class="space-y-2"></div>
                 </div>
             </div>
         </section>
