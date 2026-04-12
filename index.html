@@ -76,7 +76,7 @@
 
                     </form>
 
-                     <!-- Error message placeholder -->
+                    <!-- Error message placeholder -->
                     <p id="error-message" class="text-error text-sm" hidden></p>
 
                     <!-- RESULT -->
@@ -105,19 +105,38 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- CARDS -->
-                    <div class="card">
-                        <h3>Paste Your URL</h3>
-                        <p>Enter any long URL you want to shorten in the input field.</p>
+                    <div class="bg-base-100 rounded-2xl shadow-md p-6 space-y-4 hover:shadow-lg transition">
+                        <div
+                            class="w-12 h-12 mx-auto rounded-xl bg-primary text-white flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-link"></i>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold">Paste Your URL</h3>
+                            <p class="text-gray-500 text-sm">Enter any long URL you want to shorten in the input field.
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <h3>Click "Get Your Shorty"</h3>
-                        <p>Click the button and let the magic happen as your URL gets shortened instantly.</p>
+                    <div class="bg-base-100 rounded-2xl shadow-md p-6 space-y-4 hover:shadow-lg transition">
+                        <div
+                            class="w-12 h-12 mx-auto rounded-xl bg-orange-400 text-white flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">Click "Get Your Shorty"</h3>
+                            <p class="text-gray-500 text-sm">Click the button and let the magic happen as your URL gets
+                                shortened instantly.</p>
+                        </div>
                     </div>
-
-                    <div class="card">
-                        <h3>Share Anywhere</h3>
-                        <p>Copy your new short URL and share it anywhere you like!</p>
+                    <div class="bg-base-100 rounded-2xl shadow-md p-6 space-y-4 hover:shadow-lg transition">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-pink-400 text-white flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-share"></i>
+                        </div>
+                        <div class="card">
+                            <h3 class="text-lg font-semibold">Share Anywhere</h3>
+                            <p class="text-gray-500 text-sm">Copy your new short URL and share it anywhere you like!</p>
+                        </div>
                     </div>
                 </div>
             </div>
