@@ -3,7 +3,10 @@
 
 // loading state
 export function showLoading(submitBtn, urlInput) { // passed in the submit button and url input as params
-    submitBtn.textContent = "Shortening...";
+    submitBtn.innerHTML = `
+      <span class="loading loading-spinner loading-sm mr-2"></span>
+      Shortening...
+    `;
     submitBtn.disabled = true;
     urlInput.disabled = true;
 
@@ -29,9 +32,9 @@ export function showResult(shortLink, shortUrl, result) { // passed in the short
 export function displayError(message, errorMessageElement) {
     errorMessageElement.textContent = message;
     errorMessageElement.hidden = false;
-    
+
     // setTimeoput to hide the error message after 5 secs
-     setTimeout(() => {
+    setTimeout(() => {
         errorMessageElement.hidden = true;
     }, 5000);
 }
