@@ -91,7 +91,7 @@
 
                 <div class="saved-links-container  mt-8 space-y-4">
                     <div>
-                    <h2 class="text-lg font-semibold">Your Links</h2>
+                        <h2 class="text-lg font-semibold">Your Links</h2>
                     </div>
 
                     <div id="links-list" class="space-y-2"></div>
@@ -167,42 +167,67 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[120px]">
 
                     <!-- BOX 1 (wide) -->
-                    <div class="md:col-span-2 md:row-span-2 bg-base-100 rounded-2xl p-6 shadow-md">
-                        <h3 class="font-semibold text-lg">Creators</h3>
-                        <p class="text-sm text-gray-500">
+                    <div class="md:col-span-2 md:row-span-2 bg-base-100 rounded-2xl p-6 shadow-md text-center">
+                        <h3 class="font-semibold md:text-6xl md:mb-7">Calling All Creators</h3>
+                        <p class="text-gray-500 md:text-3xl">
                             Share clean, aesthetic links across platforms.
+                        </p>
+                        <p>
+
                         </p>
                     </div>
 
                     <!-- BOX 2 (tall) -->
-                    <div class="md:row-span-3 bg-base-100 rounded-2xl p-6 shadow-md">
-                        <h3 class="font-semibold text-lg">Instant Shortening</h3>
-                        <p class="text-sm text-gray-500">
-                            Get your short link instantly with zero friction.
+                    <div class="md:row-span-3 rounded-2xl p-6 shadow-md bg-cover bg-[url(/style/images/background.jpg)]">
+                        <i class="fa-solid fa-bolt text-white text-4xl mb-6"></i>
+                        <h3 class="font-semibold text-5xl text-white mb-4">Instant Shortening</h3>
+                        <p class="text-white text-2xl">
+                            Paste your long URL and get a clean, short link in under a second. No sign-up required.
                         </p>
                     </div>
 
                     <!-- BOX 3 -->
-                    <div class="bg-base-100 rounded-2xl p-6 shadow-md">
-                        <h3 class="font-semibold text-lg">Students</h3>
+                    <div class="flex flex-col items-center gap-3 bg-base-100 rounded-2xl p-6 shadow-md md:row-span-2">
+                        <img src="./style/images/Group 16.svg" alt="" class="md:w-1/2 ">
+                        <h3 class="font-semibold text-lg">Teams</h3>
+                        <p class="text-gray-500 text-5xl text-center font-semibold">Collaborate & share links</p>
                     </div>
 
                     <!-- BOX 4 (tall) -->
                     <div class="md:row-span-2 bg-base-100 rounded-2xl p-6 shadow-md">
-                        <h3 class="font-semibold text-lg">Saved Links </h3>
-                        <p class="text-sm text-gray-500">
-                            Access your previously shortened links anytime.
-                        </p>
+                        <div class="text-center mb-4">
+                            <h3 class="font-semibold text-lg">Saved Links </h3>
+                            <p class="text-sm text-gray-500">
+                                Access your previously shortened links anytime.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-base-200 rounded-lg px-3 py-2 md:h-1/4 mb-3 flex justify-between items-center text-sm">
+                            <span class="truncate">bit.ly/abc123</span>
+                            <button class="text-primary text-xs font-medium hover:underline">
+                                Copy
+                            </button>
+                        </div>
+
+                        <!-- LINK ITEM -->
+                        <div
+                            class="bg-base-200 rounded-lg px-3 py-2 md:h-1/4  flex justify-between items-center text-sm">
+                            <span class="truncate">bit.ly/xyz789</span>
+                            <button class="text-primary text-xs font-medium hover:underline">
+                                Copy
+                            </button>
+                        </div>
                     </div>
 
                     <!-- BOX 5 -->
                     <div class="bg-base-100 rounded-2xl p-6 shadow-md">
-                        <h3 class="font-semibold text-lg">Teams</h3>
-                    </div>
-
-                    <!-- BOX 6 -->
-                    <div class="bg-base-100 rounded-2xl p-6 shadow-md">
-                        <h3 class="font-semibold text-lg">Marketers</h3>
+                        <div class="flex items-center justify-center">
+                            <a href="#" class="flex items-center gap-2 text-5xl font-bold">
+                                <i class="fa-solid fa-link"></i>
+                                <h1>Shorty</h1>
+                            </a>
+                        </div>
                     </div>
 
                 </div>
