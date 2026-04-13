@@ -54,8 +54,11 @@ async function handleSubmit(e) {
         saveLink(shortLink); // Save the shortened link to local storage
         const savedLinks = loadLinks(); // Load the updated list of saved links
 
-        if(savedLinks.length === 1){
-            jsConfetti.addConfetti();
+        // confetti fires off on user's first link made
+        if (savedLinks.length === 1) {
+            setTimeout(() => {
+                jsConfetti.addConfetti();
+            }, 400);
         }
         renderSavedLinks(savedLinks, linksListContainer); // Render the saved links in the UI
         console.log(shortLink);
