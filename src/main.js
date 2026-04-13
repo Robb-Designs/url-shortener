@@ -7,6 +7,7 @@ import { fetchShortUrl } from './api.js';
 import { displayError, clearError } from './ui.js';
 import { saveLink, loadLinks } from './utils.js';
 import { renderSavedLinks } from './ui.js';
+//import JSConfetti from 'js-confetti';
 
 // DOM VARIABLES ---------------------------------------------------------------------------------------------
 // Form elements
@@ -14,6 +15,7 @@ const shortenForm = document.getElementById('shorten-form');
 const urlInput = document.getElementById('url-input');
 const submitBtn = document.getElementById('submit-btn');
 const linksListContainer = document.getElementById('links-list');
+const getStartedBtn = document.getElementById('get-started-btn')
 
 //states & messages
 const errorMessage = document.getElementById('error-message');
@@ -24,6 +26,9 @@ const shortUrl = document.getElementById('short-url');
 
 //copy button
 const copyBtn = document.getElementById('copy-btn');
+
+// confetti
+const jsConfetti = new JSConfetti()
 
 
 
@@ -48,6 +53,10 @@ async function handleSubmit(e) {
         showResult(shortLink, shortUrl, result); // Show the result on the UI. Passed in
         saveLink(shortLink); // Save the shortened link to local storage
         const savedLinks = loadLinks(); // Load the updated list of saved links
+
+        if(savedLinks.length === 1){
+            jsConfetti.addConfetti();
+        }
         renderSavedLinks(savedLinks, linksListContainer); // Render the saved links in the UI
         console.log(shortLink);
 
@@ -84,3 +93,4 @@ document.addEventListener('DOMContentLoaded', () => {
     const links = loadLinks();
     renderSavedLinks(links, linksListContainer);
 });
+
