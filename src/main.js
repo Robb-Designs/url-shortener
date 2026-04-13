@@ -20,6 +20,9 @@ const getStartedBtn = document.getElementById('get-started-btn')
 //states & messages
 const errorMessage = document.getElementById('error-message');
 const result = document.getElementById('result');
+const themeToggle = document.getElementById('theme-toggle')
+const savedTheme = localStorage.getItem('theme') || 'garden';
+document.documentElement.setAttribute('data-theme', savedTheme);
 
 //result elements
 const shortUrl = document.getElementById('short-url');
@@ -95,5 +98,16 @@ copyBtn.addEventListener('click', async () => {
 document.addEventListener('DOMContentLoaded', () => {
     const links = loadLinks();
     renderSavedLinks(links, linksListContainer);
+});
+
+
+// Theme toggle
+themeToggle.addEventListener('click', () => {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'garden' ? 'coffee' : 'garden';
+
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
 });
 
